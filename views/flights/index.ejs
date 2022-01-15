@@ -1,0 +1,31 @@
+<%- include('../partials/header') %>
+
+<h2>Flight List</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Release Year</th>
+      <th>Rating</th>
+      <th>Cast</th>
+      <th>Now Showing</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- Write the line of EJS to iterate over movies using forEach -->
+    <% flights.forEach(function(f) { %>
+      <tr>
+        <td><%= f.title %></td>
+        <td><%= f.releaseYear %></td>
+        <td><%= f.mpaaRating %></td>
+        <td><%= f.cast.join(', ') %></td>
+        <!-- finish the ternary expression to display
+          'Yes' or 'Nope' --> 
+          <td><%= f.nowShowing ? 'Yes' : 'Nope' %></td>
+        </tr>
+      <!-- Close the forEach using EJS here -->
+      <% }); %>
+  </tbody>
+</table>
+
+<%- include('../partials/footer') %>
