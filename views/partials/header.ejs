@@ -10,7 +10,6 @@
 <body>
     <h1>Flights</h1>
     <nav>
-        <a href="/flights/new">New Flight</a>
-        &nbsp;|&nbsp;
-        <a href="/flights">All Flights</a>
+        <a href="/flights/new" <%- title === 'Add flight' ? 'class="active"' : '' %>>ADD FLIGHT</a>
+        <a href="/flights" <%- title === 'All flights' ? 'class="active"' : '' %>>ALL FLIGHTS</a>
     </nav>
