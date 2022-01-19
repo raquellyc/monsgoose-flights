@@ -1,9 +1,20 @@
 const Flight = require('../models/flight')
 
 module.exports = {
+    index,
     new: newFlight,
     create,
 };
+
+function index(req, res) {
+    Flight.find({}, function(err,movies){
+        res.render('flights/index', { title: 'All Flights', flights});
+    });
+}
+
+function newFlight(req, res) {
+    res.render('flights/new', { title: 'Add Flight' });
+}
 
 function create(req, res) {
     req.body.nowShowing =!!req.body.nowshowing;
@@ -18,8 +29,4 @@ function create(req, res) {
         console.log(flight);
         res.redirect('/flights')
     });
-}
-
-function newFlight(req, res) {
-    res.render('flights/new');
 }

@@ -4,20 +4,19 @@
 <table>
   <thead>
     <tr>
-      <th>Title</th>
-      <th>Release Year</th>
-      <th>Rating</th>
-      <th>Cast</th>
-      <th>Now Showing</th>
+      <th>Airline</th>
+      <th>Flight Number</th>
+      <th>Airport</th>
+      <th>Departs</th>
     </tr>
   </thead>
   <tbody>
     <!-- Write the line of EJS to iterate over movies using forEach -->
     <% flights.forEach(function(f) { %>
       <tr>
-        <td><%= f.title %></td>
-        <td><%= f.releaseYear %></td>
-        <td><%= f.mpaaRating %></td>
+        <td><%= f.airline %></td>
+        <td><%= f.flightNo %></td>
+        <td><%= f.airport %></td>
         <td><%= f.cast.join(', ') %></td>
         <!-- finish the ternary expression to display
           'Yes' or 'Nope' --> 
