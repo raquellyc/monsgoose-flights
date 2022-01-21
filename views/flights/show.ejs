@@ -11,4 +11,34 @@
     <div><%= flight.departs%></div>
     </select>
 
+<br><br><h2>Destinations</h2>
+<form id="add-destination-form" method="POST" action="/flights/<%= flights._id %>/destinations">
+    <label>destination:</label>
+    <textarea name="content"></textarea>
+    <label>Arrival:</label>
+    <input type="datetime-local" name="arrivals">
+    <input type="submit" value="Add Destination">
+</form>
+
+<% if (flight.destinations.length) { %>
+    <table>
+      <thead>
+        <tr>
+          <th>Destination</th>
+          <th>Arrival</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% flight.destinations.forEach(function(d) { %>
+          <tr>
+            <td><%- d.content.replaceAll('\r\n', '<br>') %></td>
+            <td><%= d.createdAt.toLocaleTimeString() %></td>
+          </tr>
+        <% }); %>
+      </tbody>
+    </table>
+  <% } else { %>
+    <h5>No destinations Yet</h5>
+  <% } %>
+
 <%- include('../partials/footer') %>

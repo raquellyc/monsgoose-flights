@@ -1,3 +1,4 @@
+const res = require('express/lib/response');
 const Flight = require('../models/flight')
 
 module.exports = {
@@ -15,7 +16,8 @@ function index(req, res) {
 
 function show() {
     Flight.findById(req.params.id)
-    res.render('flight/show', {title: 'Flight Detail', newFlight});
+    // flight.push(req.body);
+    res.render('flight/show', {title: 'Flight Detail', flight});
 }
 
 function newFlight(req, res) {
@@ -31,4 +33,5 @@ function create(req, res) {
       // for now, redirect right back to new.ejs
       res.redirect('/flights/new');
     });
-  }
+}
+

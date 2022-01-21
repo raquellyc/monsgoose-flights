@@ -3,15 +3,17 @@
 <table id="list">
   <thead>
     <tr>
-      <th>flight</th>
-      <th>departs</th>
+      <th>Airline</th>
+      <th>Flight<br>Number</th>
+      <th>Departs</th>
       <th></th>
     </tr>
   </thead>
   <tbody>
     <% flights.forEach(function(f) { %>
       <tr>
-        <td><%= f.flights %></td>
+        <td><%= f.airline %></td>
+        <td><%= f.flightNo %></td>
         <td><%= f.departs %></td>
         <td><a href="/flights/<%= f._id %>">DETAILS</a></td>
       </tr>
