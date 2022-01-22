@@ -16,7 +16,7 @@ body {
 
 body > nav {
   grid-area: nav;
-  background-color: #B8C0C2;
+  background-color: #82d4e9;
   display: flex;
   justify-content: flex-end;
   align-items: center;
