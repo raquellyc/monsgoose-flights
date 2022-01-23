@@ -9,7 +9,14 @@
   <div><%= flight.airport %></div>
   <div>Departs: </div>
   <div><%= flight.departs %></div>
+  <div>tickets:</div>
+  <ul>
+    <%- ticket.thetickets.map(t => 
+      `<li>${t.seat} ${t.flight} ${t.price}</li>`)%>
+  </ul>
 </section>
+
+<a href="/flights/:id/tickets/new">New Ticket</a>
   
 <br><br><h2>Destinations</h2>
 <form id="add-destination-form" method="POST" 
@@ -28,8 +35,6 @@
   <input type="datetime-local" name="arrival">
   <input type="submit" value="Add Destination">
 </form>
-
-<button type="submit">Add Ticket</button>
 
 
 <% if (flight.destinations.length) { %>
@@ -52,7 +57,7 @@
     </tbody>
   </table>
 <% } else { %>
-  <h5>No Reviews Yet</h5>
+  <h5>No Arrivals Yet</h5>
 <% } %>
 
 <%- include('../partials/footer') %>
